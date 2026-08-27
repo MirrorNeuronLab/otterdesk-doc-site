@@ -1,0 +1,25 @@
+---
+title: Runtime health
+description: Check the local runtime when a co-worker cannot start, schedule, or report current work.
+---
+
+# Runtime health
+
+The local runtime is the service on your computer that supports OtterDesk co-workers. You do not need to manage its internal details for everyday use, but its health matters when work cannot start or update.
+
+## Check the runtime
+
+Open **Settings → Resources** and use the available runtime and API checks. Read the current message before retrying an action.
+
+## Common health states
+
+- **Ready:** the local runtime is available for co-worker work.
+- **Installing:** first-time setup is still running. Keep OtterDesk open.
+- **Docker is needed:** install or start Docker Desktop, then try again.
+- **Needs attention:** read the message, correct the indicated issue, and try again.
+
+## When to retry
+
+Retry after the underlying issue is fixed, not repeatedly while setup is blocked. For example, start Docker Desktop first, wait for it to be ready, then select **Try again** in OtterDesk.
+
+If a healthy runtime still cannot start a co-worker, review that co-worker's requirements and configuration. See [Resources and capacity](/docs/resources-and-devices) and [Troubleshooting](/docs/troubleshooting).
