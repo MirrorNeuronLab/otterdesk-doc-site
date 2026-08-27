@@ -1,4 +1,4 @@
-export const appName = 'Mirror Neuron Documents';
+export const appName = 'OtterDesk Documents';
 export const docsRoute = '/docs';
 export const docsImageRoute = '/og/docs';
 export const docsContentRoute = '/llms.mdx/docs';
