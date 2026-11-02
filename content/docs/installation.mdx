@@ -1,35 +1,41 @@
 ---
 title: Install OtterDesk
-description: Get OtterDesk and the local runtime ready on your Mac or Windows computer.
+description: Install the desktop app and understand first-launch runtime and model preparation.
 ---
 
-# Install OtterDesk
+Get the current download from the [OtterDesk website](https://otterdesk.app). Choose the package that matches your operating system and processor.
 
-Install the OtterDesk desktop app on the computer where you want to supervise co-workers. OtterDesk supports macOS and Windows.
+## Choose your download
 
-## Before you begin
+| Platform | Architecture and package |
+| --- | --- |
+| macOS | Choose Apple Silicon (ARM64) or Intel (x64), matching your Mac. |
+| Windows | Choose x64 or ARM64. Use the installer for normal installation; ZIP packages are also available. |
+| Linux | x64/amd64 and ARM64 builds use Debian packages or ZIP archives. Choose a package appropriate for your distribution. |
 
-You need:
+Use the requirements shown with the current release rather than assuming every older operating system is supported. Individual co-workers can require substantially more memory or a particular GPU.
 
-- A supported Mac or Windows computer.
-- Permission to install desktop applications.
-- Docker Desktop installed and running for the local runtime.
-- Network access when downloading OtterDesk, the runtime, or a co-worker.
+## Before you open the app
 
-Some co-workers have additional CPU, memory, or GPU requirements. You can inspect these before hiring them.
+Have network access for the initial app, runtime, blueprint, and model downloads. The runtime uses Docker; install and start Docker Desktop when setup asks for it. Allow enough disk space for models and co-worker outputs, which can be much larger than the app itself.
 
-## Install and open the app
+Install the downloaded package using your operating system's normal process, then open OtterDesk.
 
-1. Download the OtterDesk installer for your computer.
-2. Run the installer and follow its prompts.
-3. Open OtterDesk.
-4. If prompted, install or start Docker Desktop.
-5. Leave OtterDesk open while it prepares the local runtime.
+## What first launch does
 
-The first setup can take several minutes. OtterDesk shows a short installation log while it works.
+The **Preparing OtterDesk…** window checks and prepares MirrorNeuron, the local runtime used for co-worker work. First setup can take a while. The main window opens after runtime readiness is confirmed.
 
-## If setup pauses
+If preparation fails, choose **Open install console** to inspect the failure. Correct the reported issue, then choose **Try again**. A failed download or installer run remains an error to resolve; repeatedly reopening the app does not fix it.
 
-When the app says **Docker is needed**, install Docker Desktop or start it if it is already installed. Once Docker is ready, return to OtterDesk and select **Try again**.
+After the main window opens, two separate preparations may continue:
 
-When setup is complete, open [Quick start](/docs/quickstart) to hire and test your first co-worker.
+- **Default model** supports co-worker work and knowledge-backed replies. The runtime selects a compatible model when its configured default is missing.
+- **Convo model** supports desktop guidance and setup. It is a separate CPU-only model, downloaded in the background. Its model file is about 1.67 GB, plus the inference engine.
+
+The app remains usable during these background downloads, but some conversation features must wait. Inspect the **Core status** panel in the bottom bar for readiness.
+
+## Sign-in is optional for free work
+
+You do not need to sign in to reach My Team or use free local co-workers. Google sign-in is used for account features and paid access. See [Account and credits](/docs/account-and-credits).
+
+Next: [Quick start](/docs/quickstart). For setup errors, see [Runtime and models](/docs/runtime-and-models) and [Troubleshooting](/docs/troubleshooting).

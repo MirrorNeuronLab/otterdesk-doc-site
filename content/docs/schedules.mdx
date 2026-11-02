@@ -1,0 +1,35 @@
+---
+title: Set and pause schedules
+description: Use a co-worker’s Shifts calendar or reviewed Chat schedule help for recurring work.
+---
+
+Set a schedule after reviewing a useful run. Scheduling belongs to the individual co-worker: open **View details → Shifts**.
+
+<AppScreenshot src="/images/app/shifts.png" alt="A co-worker’s Shifts tab showing its weekly calendar and schedule controls." caption="Each co-worker has its own Shifts view. Other schedules provide context while you edit this one." />
+
+## Edit weekly shifts
+
+1. Open the co-worker's **Shifts** tab.
+2. Choose **Edit** to adjust saved timing, or **Auto place** for a proposed arrangement.
+3. In the editor, place or drag the selected co-worker's time slots on the calendar. Other co-workers' schedules are read-only context.
+4. Set **Run time**, the maximum window for each shift. The control offers half-hour increments from 30 minutes to eight hours.
+5. Choose whether **Start automatically** is enabled.
+6. Review conflicts and timing. Select **Save changes**, or **Confirm proposal** for an automatically placed proposal.
+
+Nothing changes until you confirm the draft. Auto placement considers other saved schedules and spacing; it does not promise that runtime resources will be free when the shift arrives.
+
+## Use Chat schedule help
+
+Ask the co-worker for help setting a recurring schedule. The guided flow collects recurrence, time, time zone, and duration, then shows a review and next occurrence. Approve that reviewed schedule only after checking those details. OtterDesk reports success after the runtime confirms the save.
+
+For advanced timing that cannot be represented by weekly slots, use supported Chat/runtime scheduling controls. The calendar can display an existing cron schedule; saving weekly shifts over it replaces that advanced timing, as the editor warns.
+
+## Pause future starts
+
+Choose **Pause** on the saved schedule summary. **Enable** turns it back on. Pausing the schedule stops future automatic starts; pause current work separately through the run controls if necessary.
+
+The runtime owns saved schedules, so use the same schedule state when administering work with the external `mn` tools. Closing the desktop window is not a dependable way to disable a runtime schedule.
+
+## If a shift does not run
+
+Check the schedule's enabled state, displayed next shift, time zone, runtime readiness, and any waiting-for-resources status. The destination must be awake and able to run the work. Read the saved schedule error before editing or retrying. See [Troubleshooting](/docs/troubleshooting).

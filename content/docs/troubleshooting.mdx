@@ -1,30 +1,72 @@
 ---
 title: Troubleshooting
-description: Resolve common setup, runtime, co-worker, schedule, and review issues.
+description: Resolve startup, setup, conversation, schedule, queue, backup, and local-data problems.
 ---
 
-# Troubleshooting
+Start with the exact message shown by OtterDesk. Identify whether the issue concerns desktop startup, runtime readiness, co-worker setup, a particular run, or an account action before retrying.
 
-## OtterDesk says Docker is needed
+## Startup says “Couldn't get ready”
 
-Install Docker Desktop or open it if it is already installed. Wait until Docker is ready, return to OtterDesk, and select **Try again**. See [Set up your local runtime](/docs/docker_and_openshell_for_blueprints).
+Choose **Open install console**. If Docker is required, install or start it and wait until it is ready. Confirm network access for the hosted installer and model downloads. Resolve the reported failure, then select **Try again**. See [Runtime and models](/docs/runtime-and-models).
 
 ## A co-worker cannot be hired
 
-Review its requirements on the detail page. Check **Settings → Resources** for available capacity. If it needs a GPU you do not have, add a suitable trusted computer or choose a different co-worker.
+Read its **Requirements** and the hiring error. Check **Settings → Resources** for a healthy computer that meets the specific GPU, memory, and platform requirement. Combined cluster memory is not a substitute for one suitable GPU. Resolve runtime/catalog or account errors separately.
 
-## A co-worker cannot start
+## Setup does not start work
 
-Confirm the co-worker is configured, check runtime health, then select **Test now** again. Read the displayed message before retrying.
+Open Chat and check **Respond** for the current required answer. Defaults must be confirmed, and credentials must be entered through their secure controls. A final required Chat answer can start work; **Save changes** in Configure only saves it. For an already configured co-worker, use **Start now**.
+
+## A start is waiting for resources
+
+Open **Quick view**. Read the destination, blocker, and queue position. Paused work and unfinished cleanup can still reserve the computer. Cancel a queued start or schedule it later using the available controls; repeated start clicks do not create capacity.
+
+## Chat is preparing, unavailable, or has limited context
+
+Check **Core status** for **Convo model** and **Default model** separately. Keep the app open during downloads, check disk space and connectivity, and use **Try again** after a failure. Existing history and setup controls remain available.
+
+A ready conversation model does not guarantee live co-worker knowledge access. Use Status for current facts when Chat says context is limited. While work is active, ask again after completion if the reply requests it; do not assume a follow-up is queued.
+
+## A decision appears stuck
+
+Select **Respond** and the correct pending request. Check whether it expired, was already handled, or needs an explicit form submission. Review the failure message before retrying. For rule reviews, save or discard open edits before approval.
+
+## A run failed
+
+Read the reported cause and available evidence in Status or Logs. Use **Retry run** only after reviewing its recovery plan. If the failure changed your inputs or result-defining settings, use **Start new run** instead. See [Run controls and recovery](/docs/run-and-pause).
 
 ## A schedule did not run
 
-Open **Shifts**, refresh the page, and verify that the schedule is enabled. Check for a schedule error and confirm the runtime is ready. If you recently changed capacity or connected computers, review **Settings → Resources**.
+Open that co-worker's **View details → Shifts**. Check that the schedule is enabled, inspect its next occurrence and time zone, and read any schedule error. Confirm runtime readiness and that the destination is awake. Check Quick view for queued work. Pausing a current run is different from pausing automatic starts.
 
-## Chat says current work is limited
+## A Web UI stays in loading or shows an error
 
-The co-worker can still offer role or planning guidance, but OtterDesk cannot verify current work at that moment. Use the ordinary status and review controls, or check runtime health.
+Use the workspace's retry action after checking runtime and service readiness. Web UI loading is bounded, so a failed view can show an error while the co-worker continues running. Inspect Status before starting another run. A cross-computer UI may require matching runtime components.
 
-## I need more help
+## Another computer will not connect
 
-Record the co-worker name, the action you tried, the visible status, and the safe error message. Do not include passwords, tokens, or private material in a support request.
+Confirm both runtimes are running and the computers can reach each other. Use the host and current federation token from the other computer's `mn runtime start` output. The runtime must confirm the reciprocal connection; check the reported error rather than assuming the node was added.
+
+## Backup or restore is unavailable
+
+Check that the co-worker has a saved runtime job, pause active work, and confirm sufficient disk space. The destination needs compatible runtime, Python, Docker, Model Runner, platform, and hardware. An `mn.backup.v3` error requires matching runtime components. A ZIP does not bypass hardware requirements.
+
+## An action requires an account or credits
+
+Sign in through the app's account dialog, then retry the original action. Refresh the balance in Settings. Distinguish insufficient credits from an unavailable account service. Free local work remains available when already prepared.
+
+## Old desktop data is unsupported
+
+`ERR_UNSUPPORTED_LOCAL_DATA` means the current app cannot read the stored schema. The files remain untouched. Back them up before choosing a fresh start. The current desktop accepts co-worker registry schema v5 and conversation schema v7; retired local-model and test-substitution preferences are not migrated.
+
+For a source checkout, the explicit desktop-only reset is:
+
+```bash
+npm start -- --reset
+```
+
+Quit OtterDesk first. **Reset deletes desktop-owned local state**, including account sessions, preferences, local credentials, history, browser storage, logs, and downloaded conversation assets. The anonymous-usage opt-out is preserved. It does not reset MirrorNeuron jobs, erase user documents, or remove external output folders. Runtime reset is a separate installer operation. Do not use reset as a first response to an ordinary network or model failure.
+
+## Get help
+
+Use **Help** in the sidebar to return to this guide. For a support report, record the app/runtime versions, operating system and architecture, co-worker name, action, visible status, exact safe error, and whether it repeats. Include only relevant, inspected log excerpts or screenshots. Remove tokens, credentials, private document content, and personal paths before sharing.

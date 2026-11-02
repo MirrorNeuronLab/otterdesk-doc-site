@@ -1,32 +1,37 @@
 ---
 title: How OtterDesk works
-description: Understand co-workers, missions, evidence, reviews, and trust in everyday language.
+description: Understand co-workers, runs, evidence, schedules, and the decisions you supervise.
 ---
 
-# How OtterDesk works
+OtterDesk organizes work around a supervision loop: **mission → co-worker → evidence → decision → trust**.
 
-OtterDesk helps you supervise AI co-workers without treating them as a black box. Each co-worker is a role you add to your team, such as monitoring, research, operations, or another focused responsibility.
+## Co-worker, run, and schedule
 
-## Co-workers
+| Concept | What it means |
+| --- | --- |
+| Co-worker | A hired role with its own mission, saved setup, conversation, and runtime work. |
+| Blueprint | The catalog definition you inspect and hire. Requirements and capabilities come from this definition. |
+| Run | One execution of a co-worker's work. A batch co-worker can have many runs; a live service can keep one run active. |
+| Schedule or shift | Saved timing for automatic work. Pausing a run and pausing its future schedule are separate controls. |
+| Evidence | The source material, report, observations, or outputs supporting a result. Availability depends on the co-worker. |
+| Requested input | A question or review that requires your response through a declared control. |
 
-A co-worker has a mission, configuration, activity history, and an optional schedule. You can give it a recognizable name, test it, pause it, review it, or archive it when you no longer need it.
+Opening an existing co-worker does not start a new run. Completing first-time Chat setup can start one. Read [Setup and configuration](/docs/setup) before supplying the last answer.
 
-## Missions and work
+## What status tells you
 
-The mission explains what the co-worker is responsible for. Work happens in individual runs. A run may be started by you with **Test now** or by a schedule.
+| Label | How to interpret it |
+| --- | --- |
+| Ready | No work is currently active; check required setup before starting. |
+| Running | Work is active. For a live co-worker, this can mean an ongoing service rather than a task nearing completion. |
+| Scheduled | Future work is planned. A queued run can also say **Waiting for resources**. |
+| Paused | Current work has been paused. Its schedule may still need separate attention. |
+| Needs review | Open the co-worker to inspect a pending request, result, or failure. |
 
-## Evidence and decisions
+Detailed views may also show preparation, completion, failure, cancellation, or unavailable status. A badge is a starting point; inspect the latest activity and its timestamp before acting.
 
-OtterDesk keeps activity and evidence with the co-worker's work. If a co-worker needs a human choice, it shows a **Decision needed** card. It waits for your response instead of acting past that boundary.
+## Trust is specific to the work
 
-## Trust
+Check the inputs, connected services, limitations, and evidence. A successful run means the workflow completed; it does not certify the quality of its conclusions. Human approvals apply to the particular request shown, and a report's display controls do not grant approval.
 
-Trust is practical, not assumed. Before relying on a co-worker, inspect:
-
-- Its mission and expected input and output.
-- Its connected data sources and stated limitations.
-- Its recent activity and evidence.
-- Its approval requirements.
-- Its resource requirements and current health.
-
-Use [Review work](/docs/monitor) for the day-to-day review process and [Privacy and safety](/docs/security) for the data and control boundaries.
+Use [Run controls](/docs/run-and-pause), [Review work](/docs/review-work), and [Approvals](/docs/approvals) for the day-to-day actions.

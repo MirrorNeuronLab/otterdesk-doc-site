@@ -1,0 +1,40 @@
+---
+title: Setup and configuration
+description: Complete guided setup in Chat, save credentials securely, and edit settings for later work.
+---
+
+New co-workers normally collect their required inputs in Chat. **Configure** provides a separate form for reviewing and editing saved settings.
+
+## Complete first-time setup
+
+1. Open the newly hired co-worker.
+2. Read its introduction and current question.
+3. Where offered, select **Start from sample data** or **Use your own data**.
+4. Supply the requested answer using the bottom input area. Text replies use the composer; files, folders, credentials, and structured questions have dedicated controls.
+5. Continue until all required answers are confirmed.
+
+<AppScreenshot src="/images/app/chat-setup.png" alt="Guided Chat setup with a current required question, previous context, and answer controls at the bottom." caption="The co-worker asks one required question at a time. Use the control attached to that question." />
+
+**The last required answer can start work.** Sample selection saves and starts when its declared setup is complete. Own-data setup starts after its last required answer. A single-source setup with nothing else to answer can start immediately when ready. Review the task and inputs before making that final choice.
+
+Samples are available only when the blueprint declares them. They demonstrate the workflow; review the result before using your own data.
+
+## Review or change saved configuration
+
+1. Open the co-worker's **View details** control.
+2. Select **Configure**.
+3. Edit the relevant fields. Required fields and secure fields depend on the co-worker.
+4. Select **Save changes** to save the visible form together.
+
+<AppScreenshot src="/images/app/configure.png" alt="The Configure tab showing editable co-worker settings and Save changes." caption="Configure is save-only. Start a later run explicitly after reviewing the saved values." />
+
+Configure does not launch work. Changes to an existing saved setup or an active co-worker in Chat are saved for the next run. Do not assume a running task has switched to new settings. For supported live controls, such as a monitoring goal, use the explicit control and check its receipt.
+
+## Inputs, defaults, and credentials
+
+- A bundled example path appears as **Sample data**. Remove it and choose your own location when switching to real inputs.
+- Confirm suggested defaults deliberately; a suggestion is not the same as your saved answer.
+- Use **Change input source** in guided setup to switch inputs without leaving Chat.
+- Enter passwords and API tokens only in dedicated secure controls. They are stored through the desktop credential store and are not ordinary Chat messages.
+
+If a save fails, correct the reported value or connection and choose **Try again**. Do not start until required setup is saved. See [Troubleshooting](/docs/troubleshooting) for runtime and connection failures.

@@ -1,5 +1,5 @@
 {
-  "name": "mn-doc-site",
+  "name": "otterdesk-doc-site",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,9 @@
     "dev": "next dev",
     "start": "next start",
     "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
-    "postinstall": "fumadocs-mdx"
+    "postinstall": "fumadocs-mdx",
+    "check:content": "node scripts/check-content.mjs",
+    "screenshots": "node scripts/capture-screenshots.cjs"
   },
   "dependencies": {
     "fumadocs-core": "16.9.3",

@@ -1,0 +1,35 @@
+---
+title: Runtime and models
+description: Distinguish startup readiness, the runtime default model, and the desktop conversation model.
+---
+
+MirrorNeuron runs co-worker work. OtterDesk prepares it at startup and uses its API for catalog, run, schedule, and resource state. Daily work should not require a terminal.
+
+## Runtime startup
+
+The startup window downloads the hosted MirrorNeuron installer, checks runtime and Docker status, and prepares or starts the runtime when needed. The same selected installer owns detection and readiness. A download or script failure remains visible for retry.
+
+If startup reports **Couldn't get ready**, open the install console and read the specific failure. Start Docker when requested, resolve the issue, and choose **Try again**. Keep the startup window open while preparation is in progress.
+
+For manual checks after opening the app, use **Settings → Resources**. The bottom-bar **Core status** panel provides a compact view of runtime and model readiness.
+
+## Two model paths
+
+| Readiness label | Purpose | What to expect |
+| --- | --- | --- |
+| **Default model** | Co-worker work and knowledge-backed conversation through the runtime. | MirrorNeuron selects and installs its configured compatible default when missing. Requirements depend on the model and co-worker. |
+| **Convo model** | Desktop guidance, setup, and the Settings conversation playground. | A separate CPU-only LiquidAI model and private inference engine prepare in the background. The model download is about 1.67 GB. |
+
+The Convo model is separate from blueprint model selection. A ready conversation engine does not prove that knowledge access or a co-worker's work model is ready. Conversely, a conversation failure does not mean an active co-worker has stopped.
+
+## When conversation is preparing
+
+History and setup controls remain visible. Ordinary messaging may wait for a ready engine or show **Conversation unavailable** with **Try again** after a failure. Verified co-worker work context can connect separately.
+
+If a reply says current-work context is limited, use Status and the evidence views for current facts. While work is active, a short guidance reply may ask you to return after completion rather than queuing the question.
+
+## Recovery and updates
+
+Check connectivity, disk space, runtime health, and reported hardware requirements before retrying. Runtime identity errors require repairing the original configuration; do not create a new identity merely because Wi-Fi changed or a computer slept.
+
+An explicit capability/version error means the matching runtime components need an update. Retrying a feature against an incompatible runtime does not add that capability. See [Troubleshooting](/docs/troubleshooting).

@@ -1,0 +1,38 @@
+---
+title: Privacy and safety
+description: Understand local data, secure credentials, optional usage reporting, and explicit external connections.
+---
+
+OtterDesk is local-first. Its desktop services own configuration, conversation history, credentials, and local storage. The runtime may execute work on trusted connected computers. Review each co-worker's declared sources and integrations before supplying real data.
+
+## Local does not mean always offline
+
+Initial setup downloads runtime code, blueprints, and models. Account features, optional usage counters, Slack, external AI clients, configured models, and co-worker integrations can communicate with external services. A co-worker's catalog-declared data boundary and your configuration determine its actual access.
+
+An **Air-gapped** badge is shown only when declared by the catalog. It is not a blanket guarantee for every role or every connection you enable.
+
+## Credentials
+
+Use dedicated secure fields for passwords, API tokens, and other secret answers. The main process uses Electron's OS-backed encryption for stored co-worker credentials. Secret values are not normal Chat messages or plaintext renderer settings.
+
+Do not paste secrets into Chat, notes, feedback, screenshots, or report inputs. A federation token, external connection code, and runtime owner token are different credentials; use each only in its intended connection or authorization form.
+
+## Anonymous usage statistics
+
+**Settings → General → Privacy → Share anonymous usage statistics** is enabled by default. Reports contain app opens, co-worker hires, starts, and observed run outcomes.
+
+The transmitted fields are the public co-worker ID, event type, UTC date, and an opaque per-event deduplication ID. They exclude account identity, device ID, runtime IDs, documents, Chat, and configuration. Reporting works independently of Google sign-in.
+
+Turn the setting off to stop reports, abort pending reporting, and discard unsent statistics. Previously received aggregate counts remain. Opting back in does not replay activity from the opted-out period. This preference survives restart and explicit desktop reset.
+
+## Connections and approvals
+
+Connect only computers and services you trust. External AI tool access can expose run controls and declared tools; revoke it in Integration when no longer needed. Slack routing has a separate, narrower reply path.
+
+Read the exact review request before approving it. Review notes and declared choices apply to that request. Reports, evidence thumbnails, and discussion buttons do not themselves approve work or prove a conclusion is accurate.
+
+## Logs, backups, and deletion
+
+Logs are local diagnostics and should avoid secrets and full user content. Still inspect any support material before sharing it. Backup ZIPs can include sensitive runtime data and configuration; keep them private.
+
+Clearing Chat, forgetting an instruction, archiving a co-worker, and permanently deleting it are separate actions. Use [Memory and files](/docs/memory-and-files), [Backup and restore](/docs/backup-and-restore), and [Retire and delete](/docs/retire-and-delete) to choose the right boundary.

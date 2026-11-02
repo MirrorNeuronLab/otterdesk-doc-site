@@ -1,0 +1,28 @@
+---
+title: Connect another computer
+description: Add a trusted runtime computer, check its capacity, and leave the cluster when appropriate.
+---
+
+Connect another computer when a co-worker needs hardware or capacity unavailable locally. The other computer must be trusted, reachable, and prepared with a compatible MirrorNeuron runtime.
+
+## Connect the computer
+
+1. On the other computer, start its runtime with `mn runtime start`.
+2. Copy the host address and active federation token it prints.
+3. In OtterDesk, select the header's add-computer control, or open **Settings → Resources** and use the computer connection control.
+4. In **Connect another computer**, enter **Hostname or IP address** and the token from the other runtime.
+5. Select **Connect computer** and wait for confirmation.
+
+The runtime must confirm the reciprocal connection before OtterDesk reports success. A typed address alone does not add usable capacity.
+
+## Verify the result
+
+Look for the computer in the header and **Settings → Resources**. Select **Full cluster** and inspect the new computer's resources and health. Retry the original hire or start only after the specific requirement can be met.
+
+To connect another computer to this one, Resources also provides this computer's target and connection token. Reveal or copy it only when needed. Tokens are private and should not be shared in screenshots, Chat, or support reports.
+
+## Leave a computer
+
+Use **Leave** for the relevant remote computer in Resources when it should no longer be part of the cluster. Consider any running or owned work before disconnecting. Leaving the cluster is different from uninstalling the runtime or deleting a co-worker's data.
+
+If connection fails, confirm network reachability and runtime readiness on both computers, then obtain a current token. See [Troubleshooting](/docs/troubleshooting).

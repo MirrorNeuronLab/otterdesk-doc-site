@@ -1,0 +1,38 @@
+---
+title: Back up and restore a co-worker
+description: Save a private ZIP, restore it on compatible hardware, or bring back an archived co-worker.
+---
+
+Use **Settings → General → Backup and restore** to transfer a saved runtime co-worker. This differs from archiving, exporting a blueprint package, or backing up all desktop Chat history.
+
+<AppScreenshot src="/images/app/backup-and-restore.png" alt="The expanded Backup and restore section with a co-worker selector, Save backup ZIP, and Restore and start from ZIP." caption="Backup controls are disclosed in General. Restoring from ZIP creates and starts an independent co-worker." />
+
+## Save a backup ZIP
+
+1. Pause active work before backing it up.
+2. Open **Backup and restore**.
+3. Select **Co-worker to back up**.
+4. Choose **Save backup ZIP** and select its destination in the native save dialog.
+5. Wait for completion. Large dependencies can take several minutes.
+
+The backup includes runtime local data, configuration, model payloads, Python dependencies, and Docker images. Keep it private and store it on trusted media. Treat it as a runtime-job transfer, not a complete backup of the desktop profile, conversations, or every external source folder.
+
+## Restore on a compatible computer
+
+The destination already needs compatible MirrorNeuron, Python, Docker, and Docker Model Runner installations. It must also meet the co-worker's hardware and platform requirements. A backup does not make an incompatible GPU or operating system compatible.
+
+1. Open **Settings → General → Backup and restore** on the destination.
+2. Choose **Restore and start from ZIP**.
+3. Select the private backup file.
+4. Let the runtime check compatibility, restore the data, and attempt the initial start.
+5. Open the restored co-worker in My Team and inspect the result.
+
+**This action starts work.** It creates an independent co-worker without a catalog hire. Saved schedules remain paused; enable them only after reviewing the restored setup. Source run history remains evidence, not a newly executed result. If its initial start fails, the restored co-worker remains in My Team so you can fix the issue and start later.
+
+This workflow needs the runtime's backup upgrade (`mn.backup.v3`). An older-runtime error is an update requirement.
+
+## Restore an archived co-worker on this installation
+
+Use **Settings → Archived → Restore** instead of importing a ZIP. This returns the existing co-worker and its retained history to My Team. Work remains stopped and schedules paused. If the same blueprint already has a current hire, archive that hire first.
+
+See [Retire and delete](/docs/retire-and-delete) for retention and deletion boundaries.

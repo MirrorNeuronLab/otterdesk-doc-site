@@ -1,0 +1,48 @@
+---
+title: Run controls and recovery
+description: Start later work, pause or resume a run, handle queues, and retry a failed attempt.
+---
+
+A batch co-worker performs bounded work and finishes. A live or service co-worker can remain active until paused or stopped. Review which kind you hired before deciding whether work is taking too long.
+
+## Choose the right control
+
+| Action | What it does |
+| --- | --- |
+| **Start now** | Starts configured work. For a batch co-worker, the first setup run can use a bounded quick-test scope with real models and skills. |
+| **Pause** | Pauses the current execution so it can be resumed. It does not automatically disable future schedules. |
+| **Resume** | Continues paused work rather than creating a new execution. |
+| **Stop**, when offered | Cancels the execution. This differs from a resumable pause. |
+| **Retry run** | Plans a new attempt of an eligible failed execution, preserving verified completed work. |
+| **Start new run** | Starts fresh work; use it when inputs or result-defining settings change. |
+
+From Chat, use the toolbar's play or pause control; hover for its label. Details also expose the available run action. Opening a co-worker does not start work. Completing initial Chat setup can.
+
+## Start and follow progress
+
+Check required setup, then select **Start now**. Keep the acceptance update separate from completion: preparation can continue after the command has been accepted. Follow the workspace progress panel or **View details → Status**.
+
+A live co-worker's startup can finish while its service continues running. A percentage or completed startup step does not mean that monitoring has ended.
+
+## When the computer is busy
+
+A busy computer can accept a queued start. **Quick view** lists it separately from running work, with **Waiting for resources**, its destination, and available queue details.
+
+- **Cancel queued start** cancels only while it remains queued.
+- **Schedule a time** defers the same queued work; it does not reserve the computer in advance.
+- Paused work or cleanup can still hold resources. Check the blocker instead of repeatedly starting another run.
+
+The runtime owns admission and dispatch. A queue position is not an estimated start time. See [Resources](/docs/resources).
+
+## Retry a failed run
+
+1. Open the failed run's details and select **Retry run**.
+2. Review the reported cause, steps to preserve, steps to retry, and consumed running time.
+3. Adjust only the settings explicitly offered by the recovery plan, if needed.
+4. Submit the reviewed retry once, then follow the accepted attempt.
+
+Retry needs a retained, verified checkpoint. If recovery is unavailable, read the reason before choosing **Start new run**. Resume is for paused work; retry is for failed work. New inputs require a fresh run.
+
+## Interrupt safely
+
+If you need both current work and future automatic starts to stop, pause the run and pause its schedule separately. Inspect status after an interrupted connection: losing observation does not prove the runtime stopped, and retrying an effectful action can be different from checking its existing status.

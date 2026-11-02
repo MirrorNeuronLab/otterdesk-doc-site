@@ -1,0 +1,31 @@
+---
+title: Connect an external AI tool
+description: Enable a co-worker’s MCP connection deliberately, authorize the client, and revoke it when finished.
+---
+
+A supported external AI client can connect to a co-worker through MCP. This can grant access to work, declared domain tools, and run controls. Enable it only for clients you trust.
+
+## Enable the co-worker connection
+
+1. Open **View details → Integration**.
+2. Under **MCP**, enable **Allow external AI tools**.
+3. Review the server URL. Use **Connection settings** if the client needs a reachable address.
+4. Copy the URL and, separately, the private connection code.
+
+The runtime must have owner API authentication configured. If the panel says **Configure MN_API_TOKEN**, resolve that runtime prerequisite before retrying. The owner token is different from the connection code and must not be entered into Chat or a client connection form intended for the code.
+
+## Authorize your client
+
+Use the client's supported MCP setup and browser OAuth flow. Paste the private connection code only into the authorization form. A remote client cannot reach a localhost address on your computer without an appropriate secure tunnel or reachable HTTPS endpoint.
+
+For clients supported by the app's **Copy setup prompt**, copy that secret-free prompt and follow its instructions. Keep the separate connection code out of the prompt. The client should preserve unrelated connections and verify the co-worker's manual and current run status with actual tool calls before claiming readiness.
+
+A pasted URL alone does not register or authorize a client. If the client needs a restart or new conversation to load tools, complete that step before requesting work.
+
+## Verify scope and revoke access
+
+Begin with a read-only check of the user manual and run status. Confirm it refers to the intended co-worker. A successful connection is not permission to start arbitrary work.
+
+Disable **Allow external AI tools** to revoke external connections. Desktop Chat and GUI controls remain available. Reconnecting with changed connection settings rotates the code and revokes earlier connections.
+
+Client menus and availability depend on the client and workspace policy. Use its current official connection instructions alongside the co-worker's Integration panel.

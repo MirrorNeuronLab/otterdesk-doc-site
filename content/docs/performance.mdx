@@ -1,0 +1,28 @@
+---
+title: Compare co-worker performance
+description: Read My Team measurements and the Performance tab without confusing runtime success with result quality.
+---
+
+**My Team** compares your co-workers using recorded runtime history. Each card leads with the co-worker and status, then shows available measurements.
+
+<AppScreenshot src="/images/app/my-team.png" alt="My Team showing recorded run counts, running time, tokens, and success rate for a sample co-worker." caption="Select a card’s measurements or update footer to open its Performance tab." />
+
+## Open detailed performance
+
+Select a card's measurements in My Team, or open the co-worker's **View details → Performance** tab. Selecting the card header opens Chat instead.
+
+| Measurement | How to read it |
+| --- | --- |
+| Running time | Recorded active execution time, distinct from elapsed wall-clock time or a schedule window. |
+| Tokens | Reported model token usage; missing or estimated usage is labeled. |
+| Total runs | The recorded executions included in the runtime's analysis. |
+| Successful / failed runs | Runtime outcomes, not a human assessment of the report's accuracy. |
+| Success rate | The reported proportion of successful work in the analysis; review coverage and exclusions before comparing. |
+
+A co-worker with no recorded runs shows an empty state. Unavailable values remain unavailable. Partial history, estimates, and stale readings should stay explicit; a refresh error does not turn a previous reading into a current measurement.
+
+## Use the numbers to choose a next step
+
+If work is slower or fails more often, inspect the affected run's inputs, failure message, and resource assignment. Review the actual output before making a quality judgment. Do not treat the app header's cluster resource readings as this co-worker's exclusive usage.
+
+See [Review work](/docs/review-work) for results and [Resources](/docs/resources) for capacity and queues.

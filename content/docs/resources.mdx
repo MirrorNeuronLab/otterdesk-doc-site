@@ -1,0 +1,35 @@
+---
+title: Resources and waiting work
+description: Read measured capacity, inspect run reservations, and understand why a start is waiting.
+---
+
+Open **Settings → Resources** to inspect this computer and the trusted computers connected to it. Use **This computer** or **Full cluster** to choose the scope.
+
+<AppScreenshot src="/images/app/resources.png" alt="Settings Resources with local capacity and connected-computer controls." caption="Inspect per-computer capacity before assuming a co-worker’s hardware requirements can be met." />
+
+## Keep capacity, usage, and reservations separate
+
+| View | What it tells you |
+| --- | --- |
+| Resources | Reported capacity of a computer or the cluster. |
+| Header resource readings | Measured cluster activity, including models and other applications. CPU is one-minute load relative to core count; GPU is memory use, not compute utilization. |
+| Co-worker **Status** assignment | The computer and resource amounts reserved for the current run, when available. |
+| **Quick view** | Active and queued work, including the reported blocker and queue position. |
+
+A missing reading means unavailable information. Unified-memory hardware can count memory in both GPU and system readings; do not add those figures as separate physical memory.
+
+## When hiring needs more hardware
+
+Read the exact requirement in the catalog details. A suitable healthy computer must meet the required GPU vendor, memory, and other constraints. Combined cluster totals do not turn several smaller GPUs into one larger GPU.
+
+If Docker limits CPU or memory, adjust its resource allocation on the relevant computer, then refresh OtterDesk's resource view. Hardware requirements cannot be solved by changing a display label. You can also [connect a suitable trusted computer](/docs/connect-computers).
+
+## When a start waits for resources
+
+The runtime admits work on its owner computer. A run can reserve that computer's CPU, RAM, and GPUs; another start may queue behind it. Pausing can retain a reservation, and terminal cleanup may take time before resources are released.
+
+Use **Quick view** to inspect the destination and blocker. **Cancel queued start** affects only queued work; **Schedule a time** defers it without reserving resources. A position is not a promised start time.
+
+## Move a co-worker, when supported
+
+The co-worker's Configure area can disclose a move control for connected computers. Review the destination and runtime eligibility. Follow the reported operation to completion before assuming ownership or files moved. The runtime owns the transfer and recovery; changing a board or schedule is not a move.

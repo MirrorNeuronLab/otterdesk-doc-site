@@ -1,39 +1,49 @@
 ---
 title: Quick start
-description: Set up OtterDesk and complete your first supervised co-worker test.
+description: Hire one co-worker, answer its setup questions, and review your first run.
 ---
 
-# Quick start
-
-This is the fastest safe way to get value from OtterDesk: set up the local runtime, hire one co-worker, configure it, and run a test you can review.
+This walkthrough takes you from an empty team to a result you can inspect. Allow extra time on first launch for runtime and model downloads.
 
 ## 1. Open OtterDesk
 
-On its first launch, OtterDesk checks whether the local runtime is ready. Keep the app open while first-time setup finishes. If OtterDesk asks for Docker Desktop, install and start Docker Desktop, then choose **Try again**.
+[Install the app](/docs/installation), then let its startup window prepare the local runtime. The main window opens to **My Team**. You can use free co-workers without Google sign-in.
 
-See [Set up your local runtime](/docs/docker_and_openshell_for_blueprints) for more detail.
-
-## 2. Hire a co-worker
+## 2. Choose and hire a co-worker
 
 1. Select **Hire a co-worker** in the sidebar.
-2. Search or filter the catalog.
-3. Open a co-worker to review its mission, what you provide, what you receive, and any hardware requirements.
-4. Select **Hire Co-worker**.
+2. Search by the task you want help with, or select a category.
+3. Select **View details**. Read **What to expect**, **You provide**, **You receive**, **Requirements**, and **Trust profile**.
+4. Choose **Hire** or **Hire co-worker**, depending on the view. Wait for the hiring confirmation, then select **Open conversation**.
 
-OtterDesk checks the local runtime before it adds a co-worker. A co-worker with GPU requirements cannot be hired until a suitable computer is available.
+If hiring reports a hardware requirement, resolve it before trying again. Another computer's resources help only when a suitable node meets the requirement; a combined memory total is not a substitute for the required GPU.
 
-## 3. Configure it
+<AppScreenshot src="/images/app/hire-catalog.png" alt="The co-worker catalog with category filters, search, View details, and Hire actions." caption="Review a role before hiring it. The catalog in this screenshot uses sample co-workers." />
 
-Open **My Team**, select your new co-worker, then choose **Configure**. Give it a recognizable name and complete any required non-secret settings. Save changes before you test.
+## 3. Complete setup in Chat
 
-## 4. Run a test
+Your new co-worker introduces itself and asks for the inputs it needs. Where offered, choose **Start from sample data** for a first trial, or **Use your own data** for your task.
 
-Choose **Test now**. Follow progress in the co-worker's status view, then review the activity, inputs and outputs, and any evidence it produced.
+- Answer the current question in the input area at the bottom.
+- Use the file, folder, or secure credential control when requested.
+- Confirm a proposed default only if it is suitable.
 
-## 5. Choose the next step
+**Setup can start work:** choosing **Start from sample data** saves and starts when all required answers are ready. Own-data setup starts after the final required answer. A co-worker with a single source and no unanswered settings can start as soon as setup is ready.
 
-- If the result looks right, choose **Set schedule** to create regular shifts.
-- If the co-worker needs a different instruction or connection, choose **Configure** and test again.
-- If it asks for a decision, answer from the decision card before it continues.
+<AppScreenshot src="/images/app/chat-setup.png" alt="A newly hired co-worker asking its required setup question in the bottom conversation input area." caption="Complete one required question at a time. Earlier answers stay in the conversation." />
 
-For a fuller walkthrough, see [Browse and hire co-workers](/docs/blueprints-and-skills), [Configure a co-worker](/docs/bundle), and [Review work](/docs/monitor).
+If you want to review settings without starting, open **View details → Configure** instead. **Save changes** there only saves settings.
+
+## 4. Follow and review the work
+
+Chat shows preparation and accepted-start updates. Open the workspace panel for progress, or use **View details → Status** for steps and the assigned computer. A batch task ends; a live monitoring co-worker can continue running.
+
+Read the result in Chat or open the report and output files the co-worker provides. Check the evidence and limitations. If it needs a decision, select **Respond** and answer the request using its explicit controls.
+
+## 5. Choose the next action
+
+- Need different inputs? Update **Configure** and use **Start now** for a later run.
+- Want recurring work? Open the co-worker's **Shifts** tab, or ask for schedule help in Chat.
+- Need to interrupt work? Use **Pause**. Pause its schedule separately if you also want to prevent future automatic starts.
+
+Continue with [Chat](/docs/chat), [Review work](/docs/review-work), or [Schedules](/docs/schedules).
